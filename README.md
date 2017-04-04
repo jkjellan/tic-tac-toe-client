@@ -9,6 +9,9 @@ Description here
 1. Install with 'npm install'.
 2. Start with 'grunt serve'.
 
+## Deployment
+jkjellan.github.io/tic-tac-toe-client
+
 ## [License](LICENSE)
 
 1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
