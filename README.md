@@ -9,6 +9,10 @@ Description here
 1. Install with 'npm install'.
 2. Start with 'grunt serve'.
 
+## Deployment
+1. From the master branch, and at the root of your project, run grunt deploy
+2. Go to URL:  jkjellan.github.io/tic-tac-toe-client
+
 ## [License](LICENSE)
 
 1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
