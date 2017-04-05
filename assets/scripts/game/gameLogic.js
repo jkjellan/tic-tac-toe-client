@@ -1,4 +1,21 @@
 'use strict'
+// Why do I have to have these global variables in both
+// index.js an gameLogic.js?
+
+const winArray = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [2, 4, 6], [0, 4, 8]]
+
+const game = {
+  game: {
+    id: 3,
+    cells: ['', '', '', '', '', '', '', '', ''],
+    over: false,
+    player_x: {
+      id: 1,
+      email: 'aaa'
+    },
+    player_o: null
+  }
+}
 
 const boardArray = []
 const xLeft = ['x', 'x', 'x', 'x', 'x']
@@ -13,8 +30,6 @@ $('.p1-prompt-text').html("It's your turn, " + playerArray[0] + '!')
 $('.p2-prompt-text').html('')
 
 const checkWin = function (array) {
-  const winArray = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [2, 4, 6], [0, 4, 8]]
-
   for (let i = 0; i < winArray.length; i++) {
     xWin = winArray[i].every(function (e) {
       if (array !== undefined) {
@@ -60,7 +75,7 @@ const renderBoard = function (array, xLeft, oLeft) {
   }
 }
 
-renderBoard(boardArray, xLeft, oLeft)
+// renderBoard(boardArray, xLeft, oLeft)
 
 const handleClick = function () {
   $('.square').on('click', function (e) {
@@ -93,13 +108,13 @@ const handleClick = function () {
       oLeft.pop()
       renderBoard(boardArray, xLeft, oLeft)
     } else {
-      console.log('seat taken! or game is over')
+      // console.log('seat taken! or game is over')
     }
-    console.log(boardArray)
+    // console.log(boardArray)
 
     length = boardArray.filter((e) => { return e !== undefined }).length
 
-    console.log(winner)
+    // console.log(winner)
     if (length === 9 && (!xWin && !oWin)) {
       $('.p1-prompt-text').html('BORING! It was a draw...')
       $('.p2-prompt-text').html('BORING! It was a draw...')
@@ -109,7 +124,7 @@ const handleClick = function () {
   })
 }
 
-handleClick()
+// handleClick()
 
 module.exports = {
   checkWin,
