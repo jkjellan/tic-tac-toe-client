@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://jkjellan.github.io/tic-tac-toe-client/'
+    production: 'https://aqueous-atoll-85096.herokuapp.com/'
   }
 }
 
