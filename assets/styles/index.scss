@@ -1,6 +1,37 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+.sign-up {
+  position: absolute;
+  right: 105px;
+  top: 12px;
+  background-color: #00528C;
+  border: 0;
+}
+.sign-in {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  background-color: #00528C;
+  border: 0;
+}
+.change-pw {
+  position: absolute;
+  left: 120px;
+  top: 12px;
+  background-color: #00528C;
+  border: 0;
+}
+.sign-out {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  background-color: #00528C;
+  border: 0;
+}
+
+
+
 html {
   height: 100%;
   box-sizing: border-box;

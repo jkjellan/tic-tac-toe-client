@@ -18,6 +18,95 @@
       <body>
         <header>
           <div class="title">TIC TAC TOE</div>
+          <button type="button" class="btn btn-primary btn-lg sign-up" data-toggle="modal" data-target="#mySignUpModal">
+            Sign Up
+          </button>
+          <!-- MODAL -->
+          <div class="modal fade" id="mySignUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Sign-up</h4>
+                      </div>
+                      <div class="modal-body">
+                         <form id="sign-up">
+                           <div class="form-group">
+                            <label for="name">Email</label>
+                            <input type="text" name="credentials[email]" class="form-control" placeholder="Email">
+                            <label for="name">Password</label>
+                            <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+                            <label for="name">Password Confirmation</label>
+                            <input type="password" name="credentials[password_confirmation]" class="form-control" placeholder="Confirm Password">
+                           </div>
+                           <input type="submit" class="btn btn-default" name="submit" value="Sign up!">
+                           <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                       </form>
+                      </div>
+                </div>
+              </div>
+            </div>
+            <!-- END MODAL -->
+
+            <button type="button" class="btn btn-primary btn-lg sign-in" data-toggle="modal" data-target="#mySignInModal">
+              Sign In
+            </button>
+            <!-- MODAL -->
+            <div class="modal fade" id="mySignInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">Sign-in</h4>
+                        </div>
+                        <div class="modal-body">
+                           <form id="sign-in">
+                             <div class="form-group">
+                              <label for="name">Email</label>
+                              <input type="text" name="credentials[email]" class="form-control" placeholder="Email">
+                              <label for="name">Password</label>
+                              <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+                             </div>
+                             <input type="submit" class="btn btn-default" name="submit" value="Sign in!">
+                             <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                         </form>
+                        </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END MODAL -->
+
+              <button type="button" class="btn btn-primary btn-lg change-pw" data-toggle="modal" data-target="#myPwChangeModal">
+                Change Password
+              </button>
+              <!-- MODAL -->
+              <div class="modal fade" id="myPwChangeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+                          </div>
+                          <div class="modal-body">
+                             <form id="change-password">
+                               <div class="form-group">
+                                <label for="name">Old Password</label>
+                                <input type="password" name="passwords[old]" class="form-control" placeholder="Old Password">
+                                <label for="name">New Password</label>
+                                <input type="password" name="passwords[new]" class="form-control" placeholder="New Password">
+                               </div>
+                               <input type="submit" class="btn btn-default" name="submit" value="Change Password!">
+                               <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </form>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- END MODAL -->
+                <form id="sign-out">
+                  <input type="submit" class="btn btn-primary btn-lg sign-out" name="submit" value="Sign out!">
+                </form>
+
           <div class="scoreWrapper">
             <div id="player0" class="p1Score">
               <span id="score0" class="score">0</span>
@@ -71,6 +160,6 @@
         <footer>
 
         </footer>
-    <!-- <script src="./js/scripts.js"></script> -->
+
   </body>
 </html>

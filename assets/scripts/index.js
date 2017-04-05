@@ -2,7 +2,6 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
-const gameLogic = require('./gameLogic')
 
 // global variables.  Do these belong somewhere else?
 const boardArray = []
@@ -19,15 +18,25 @@ $('.p2-prompt-text').html('')
 
 $(() => {
   setAPIOrigin(location, config)
+})
+
+const authEvents = require('./auth/events.js')
+
+$(() => {
+  authEvents.addHandlers()
+})
+
+const gameLogic = require('./gameLogic')
+
+$(() => {
   console.log('this is my tic tac toe game')
   gameLogic.handleClick()
   gameLogic.checkWin()
   gameLogic.renderBoard()
-
 })
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
 // use require without a reference to ensure a file is bundled
-require('./example')
+// require('./example')
