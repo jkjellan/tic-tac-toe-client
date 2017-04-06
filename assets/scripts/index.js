@@ -18,22 +18,9 @@ $(() => {
 const gameLogic = require('./game/gameLogic')
 
 $(() => {
-  // global variables.  Do these belong somewhere else?
-  const boardArray = []
-  const xLeft = ['x', 'x', 'x', 'x', 'x']
-  const oLeft = ['o', 'o', 'o', 'o']
-  const scoreArray = [0, 0, 0]
-  const playerArray = ['JIM', 'DRAW', 'MELISSA']
-  let xWin = false
-  let oWin = false
-  let winner = ''
-
-  $('.p1-prompt-text').html("It's your turn, " + playerArray[0] + '!')
-  $('.p2-prompt-text').html('')
   console.log('this is my tic tac toe game')
-  gameLogic.handleClick()
-  gameLogic.checkWin(boardArray)
-  gameLogic.renderBoard(boardArray, xLeft, oLeft)
+  gameLogic.logicHandler()
+  $('#new-game').on('submit', gameLogic.resetGame)
 })
 
 // use require with a reference to bundle the file and use it in this file

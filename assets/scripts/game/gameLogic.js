@@ -2,7 +2,7 @@
 // Why do I have to have these global variables in both
 // index.js an gameLogic.js?
 
-const winArray = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [2, 4, 6], [0, 4, 8]]
+// const winArray = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [2, 4, 6], [0, 4, 8]]
 
 const game = {
   game: {
@@ -17,11 +17,11 @@ const game = {
   }
 }
 
-const boardArray = []
-const xLeft = ['x', 'x', 'x', 'x', 'x']
-const oLeft = ['o', 'o', 'o', 'o']
+let boardArray = new Array(9)
+let xLeft = ['x', 'x', 'x', 'x', 'x']
+let oLeft = ['o', 'o', 'o', 'o']
 const scoreArray = [0, 0, 0]
-const playerArray = ['JIM', 'DRAW', 'MELISSA']
+const playerArray = ['Player 1', 'DRAW', 'Player 2']
 let xWin = false
 let oWin = false
 let winner = ''
@@ -30,6 +30,8 @@ $('.p1-prompt-text').html("It's your turn, " + playerArray[0] + '!')
 $('.p2-prompt-text').html('')
 
 const checkWin = function (array) {
+  const winArray = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [2, 4, 6], [0, 4, 8]]
+
   for (let i = 0; i < winArray.length; i++) {
     xWin = winArray[i].every(function (e) {
       if (array !== undefined) {
@@ -124,10 +126,24 @@ const handleClick = function () {
   })
 }
 
-// handleClick()
+const logicHandler = function () {
+  handleClick()
+}
+
+const resetGame = function () {
+  boardArray = new Array(9)
+  xLeft = ['x', 'x', 'x', 'x', 'x']
+  oLeft = ['o', 'o', 'o', 'o']
+  xWin = false
+  oWin = false
+  winner = ''
+  renderBoard(boardArray, xLeft, oLeft)
+  for (let i = 0; i < 9; i++) {
+    $('#' + i).html('')
+  }
+}
 
 module.exports = {
-  checkWin,
-  handleClick,
-  renderBoard
+  logicHandler,
+  resetGame
 }
