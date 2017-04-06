@@ -1,10 +1,12 @@
 'use strict'
 
 const store = require('../store')
+const gameStats = require('./gameStats.js')
 
 const getGamesSuccess = (ajaxResponse) => {
   console.log('New Game Success')
-  console.log(ajaxResponse)
+  console.log(ajaxResponse.games)
+  gameStats.statsHandler(ajaxResponse.games)
 }
 
 const getGamesFailure = (error) => {
