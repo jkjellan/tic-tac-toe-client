@@ -1,27 +1,10 @@
 'use strict'
-// Why do I have to have these global variables in both
-// index.js an gameLogic.js?
-
-// const winArray = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [2, 4, 6], [0, 4, 8]]
-
-const game = {
-  game: {
-    id: 3,
-    cells: ['', '', '', '', '', '', '', '', ''],
-    over: false,
-    player_x: {
-      id: 1,
-      email: 'aaa'
-    },
-    player_o: null
-  }
-}
 
 let boardArray = new Array(9)
 let xLeft = ['x', 'x', 'x', 'x', 'x']
 let oLeft = ['o', 'o', 'o', 'o']
 const scoreArray = [0, 0, 0]
-const playerArray = ['Player 1', 'DRAW', 'Player 2']
+const playerArray = ['Player One', 'DRAW', 'Player Two']
 let xWin = false
 let oWin = false
 let winner = ''
@@ -86,9 +69,14 @@ const handleClick = function () {
 
     if ((length % 2 === 0) && (squareClicked === undefined) && (xWin === false) && (oWin === false)) {
       boardArray[+$(this).attr('id')] = 'x'
+      // fills out form that submits patch request to update game state for x
+      $('#cell-index').val(+$(this).attr('id'))
+      $('#cell-value').val('x')
+      $('#game-over').val('false')
       if (checkWin(boardArray)) {
         $('.p2-prompt-text').html('You won, ' + playerArray[0] + '!')
         $('.p1-prompt-text').html('You won, ' + playerArray[0] + '!')
+        $('#game-over').val('true')
         scoreArray[0] = scoreArray[0] + 1
       } else {
         $('.p2-prompt-text').html("It's your turn, " + playerArray[2] + '!')
@@ -99,9 +87,15 @@ const handleClick = function () {
       renderBoard(boardArray, xLeft, oLeft)
     } else if ((length % 2 === 1) && (squareClicked === undefined) && (xWin === false) && (oWin === false)) {
       boardArray[+$(this).attr('id')] = 'o'
+      // fills out form that submits patch request to update game state for o
+      $('#cell-index').val(+$(this).attr('id'))
+      $('#cell-value').val('o')
+      $('#game-over').val('false')
       if (checkWin(boardArray)) {
         $('.p1-prompt-text').html('You won, ' + playerArray[2] + '!')
         $('.p2-prompt-text').html('You won, ' + playerArray[2] + '!')
+      // fills out form that submits patch request with true if game over
+        $('#game-over').val('true')
         scoreArray[2] = scoreArray[2] + 1
       } else {
         $('.p1-prompt-text').html("It's your turn, " + playerArray[0] + '!')
@@ -118,11 +112,15 @@ const handleClick = function () {
 
     // console.log(winner)
     if (length === 9 && (!xWin && !oWin)) {
+      $('#game-over').val('true')
       $('.p1-prompt-text').html('BORING! It was a draw...')
       $('.p2-prompt-text').html('BORING! It was a draw...')
+      // submits the game form, triggering ajax PATCH request to upate game
       scoreArray[1] = scoreArray[1] + 1
       renderBoard(boardArray, xLeft, oLeft)
     }
+    // submits the game form, triggering ajax PATCH request to upate game
+    $('#submit-move').submit()
   })
 }
 

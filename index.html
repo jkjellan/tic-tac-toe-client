@@ -108,13 +108,13 @@
                 </form>
 
           <div class="scoreWrapper">
-            <div id="player0" class="p1Score"> Player 1
+            <div id="player0" class="p1Score"> Player One
               <span id="score0" class="score">0</span>
             </div>
             <div id="player1" class="drawScore"> Draw
               <span id="score1" class="score">0</span>
             </div>
-            <div id="player2" class="p2Score"> Player 2
+            <div id="player2" class="p2Score"> Player Two
               <span id="score2" class="score">0</span>
             </div>
           </div>
@@ -156,10 +156,19 @@
               <div id="o3" class= "o-sideline"></div>
             </div>
         </main>
-
+        <form id="submit-move" class="hiddenForm">
+          <input id="cell-index" name="game[cell][index]" type="text" value="">
+          <input id="cell-value" name="game[cell][value]" type="text" value="">
+          <input id=game-over name="game[over]" type="text" value="">
+          <input type="submit" name="submit" value="Submit Move!">
+        </form>
         <footer>
           <form id="new-game">
             <input type="submit" class="btn btn-primary btn-lg new-game" name="submit" value="New Game">
+
+          </form>
+          <form id="get-games">
+            <input type="submit" class="btn btn-primary btn-lg get-games" name="submit" value="Get Games">
           </form>
         </footer>
 

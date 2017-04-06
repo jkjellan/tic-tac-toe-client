@@ -1,12 +1,24 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+.hiddenForm {
+  // display: none;
+}
+.get-games {
+  position: absolute;
+  background-color: #00528C;
+  border: 0;
+  top: 12px;
+  left: 145px;
+  margin: 0 auto;
+}
 
 .new-game{
   position: absolute;
   background-color: #00528C;
   border: 0;
   top: 12px;
-  margin: 0 auto;
+  left: 12px;
+
 }
 .sign-up {
   position: absolute;
@@ -239,7 +251,7 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  text-align:center;
+
 }
 
 @media (max-width: 1200px) {
