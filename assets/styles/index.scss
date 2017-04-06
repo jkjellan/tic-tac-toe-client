@@ -1,7 +1,26 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 .hiddenForm {
-  // display: none;
+  display: none;
+}
+
+
+.find-game {
+  position: absolute;
+  background-color: #00528C;
+  border: 0;
+  top: 12px;
+  left: 280px;
+  margin: 0 auto;
+}
+.join-game {
+  position: absolute;
+  background-color: #00528C;
+  border: 0;
+  top: 12px;
+  left: 410px;
+  margin: 0 auto;
+  display: none;
 }
 .get-games {
   position: absolute;

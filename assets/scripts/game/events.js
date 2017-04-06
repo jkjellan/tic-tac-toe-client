@@ -32,10 +32,31 @@ const onSubmitMove = function (event) {
     .catch(ui.submitMoveFailure)
 }
 
+const onFindGame = function (event) {
+  event.preventDefault()
+  // const data = getFormFields(this)
+  console.log('event onFindGame triggered')
+  api.findGame()
+    .then(ui.findGameSuccess)
+    .catch(ui.findGameFailure)
+}
+
+const onJoinGame = function (event) {
+  event.preventDefault()
+  // const data = getFormFields(this)
+  console.log('event onFindGame triggered')
+  api.joinGame()
+    .then(ui.joinGameSuccess)
+    .catch(ui.joinGameFailure)
+}
+
 const addHandlers = () => {
   $('#get-games').on('submit', onGetGames)
   $('#new-game').on('submit', onNewGame)
   $('#submit-move').on('submit', onSubmitMove)
+  $('#find-game').on('submit', onFindGame)
+  $('#join-game').on('submit', onJoinGame)
+
 }
 
 module.exports = {

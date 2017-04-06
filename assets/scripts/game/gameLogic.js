@@ -8,6 +8,7 @@ const playerArray = ['Player One', 'DRAW', 'Player Two']
 let xWin = false
 let oWin = false
 let winner = ''
+let catsCounter = 0
 
 $('.p1-prompt-text').html("It's your turn, " + playerArray[0] + '!')
 $('.p2-prompt-text').html('')
@@ -111,7 +112,8 @@ const handleClick = function () {
     length = boardArray.filter((e) => { return e !== undefined }).length
 
     // console.log(winner)
-    if (length === 9 && (!xWin && !oWin)) {
+    if (length === 9 && (!xWin && !oWin) && catsCounter === 0) {
+      catsCounter++
       $('#game-over').val('true')
       $('.p1-prompt-text').html('BORING! It was a draw...')
       $('.p2-prompt-text').html('BORING! It was a draw...')
@@ -135,6 +137,7 @@ const resetGame = function () {
   xWin = false
   oWin = false
   winner = ''
+  catsCounter = 0
   renderBoard(boardArray, xLeft, oLeft)
   for (let i = 0; i < 9; i++) {
     $('#' + i).html('')

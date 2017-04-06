@@ -25,12 +25,32 @@ const newGameFailure = (error) => {
 }
 
 const submitMoveSuccess = (ajaxResponse) => {
-  console.log('New Game Success')
+  console.log('Submit Move Success')
   console.log(ajaxResponse)
 }
 
 const submitMoveFailure = (error) => {
-  console.log('New Game error')
+  console.log('Submit Move error')
+  console.error(error)
+}
+
+const findGameSuccess = (ajaxResponse) => {
+  console.log('Find Game Success')
+  console.log(ajaxResponse)
+}
+
+const findGameFailure = (error) => {
+  console.log('Find Game Error')
+  console.error(error)
+}
+
+const joinGameSuccess = (ajaxResponse) => {
+  console.log('Join Game Success')
+  console.log(ajaxResponse)
+}
+
+const joinGameFailure = (error) => {
+  console.log('Join Game Error')
   console.error(error)
 }
 
@@ -40,5 +60,9 @@ module.exports = {
   newGameSuccess,
   newGameFailure,
   submitMoveSuccess,
-  submitMoveFailure
+  submitMoveFailure,
+  findGameSuccess,
+  findGameFailure,
+  joinGameSuccess,
+  joinGameFailure
 }

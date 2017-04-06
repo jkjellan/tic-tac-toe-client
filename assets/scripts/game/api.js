@@ -23,6 +23,27 @@ const newGame = () => {
   })
 }
 
+const findGame = () => {
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + store.game.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const joinGame = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + store.game.id,
+    method: 'PATCH',
+    data
+    // headers: {
+    //   Authorization: 'Token token=' + store.user.token
+    // }
+  })
+}
+
 const submitMove = (data) => {
   console.log(store.game)
   return $.ajax({
@@ -38,5 +59,7 @@ const submitMove = (data) => {
 module.exports = {
   getGames,
   newGame,
+  findGame,
+  joinGame,
   submitMove
 }
