@@ -6,7 +6,7 @@ const gameStats = require('./gameStats.js')
 const getGamesSuccess = (ajaxResponse) => {
   console.log('Get Games Success')
   console.log(ajaxResponse.games)
-  gameStats.statsHandler(ajaxResponse.games)
+  gameStats.renderHistory(ajaxResponse.games)
 }
 
 const getGamesFailure = (error) => {
@@ -17,7 +17,8 @@ const getGamesFailure = (error) => {
 const getFinishedGamesSuccess = (ajaxResponse) => {
   console.log('Get Finished Games Success')
   // console.log(ajaxResponse.games)
-  gameStats.statsHandler(ajaxResponse.games)
+  gameStats.renderHistory(ajaxResponse.games)
+  gameStats.wonLost(ajaxResponse.games)
 }
 
 const getFinishedGamesFailure = (error) => {

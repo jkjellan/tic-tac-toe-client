@@ -1,11 +1,30 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+.win {
+  font-size: 18px;
+  color: green;
+  padding: 0 20px;
+}
+.loss {
+  font-size: 18px;
+  color: red;
+  padding: 0 20px;
+}
+.draw {
+  font-size: 18px;
+  padding: 0 20px;
+}
 .hiddenForm {
   display: none;
 }
-h2 {
+.game-hist-header{
   text-align: center;
-  margin-bottom: 15px;
+  margin: 0 0 5px 0;
+  font-size: 30px;
+}
+.game-stats {
+  text-align: center;
+  padding-bottom: 20px;
 }
 .games-won {
   text-align: center;
@@ -18,7 +37,7 @@ h2 {
   margin: 10px;
 }
 .player-stats-history {
-  margin: 20px 60px;
+  margin: 10px 70px 20px 70px;
 }
 .player-stats {
   position: absolute;

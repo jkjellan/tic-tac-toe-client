@@ -3,7 +3,8 @@
     <head>
       <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
+      <!-- To scale properly for mobil -->
+      <meta name="viewport" content="user-scalable = yes">
       <!-- linking google fonts -->
       <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Raleway:400,500,600,700|Noto+Sans:400,500,600" rel="stylesheet">
 
@@ -157,7 +158,12 @@
             </div>
         </main>
         <div class="player-stats-history">
-          <h2>Game History</h2>
+          <div class="game-hist-header">Player One - Game History</div>
+            <div class="game-stats">
+              <span id="w" class="win">Win: 0</span>
+              <span id="l" class="loss">Loss: 0</span>
+              <span id="d" class="draw">Draw: 0</span>
+            </div>
           <div class="games-won">
 
           </div>
