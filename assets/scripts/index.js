@@ -29,7 +29,8 @@ const gameLogic = require('./game/gameLogic')
 
 $(() => {
   gameLogic.logicHandler()
-  $('#new-game').on('submit', gameLogic.resetGame)
+  $('#new-game').on('submit', gameLogic.newGame)
+  $('#play-again').on('submit', gameLogic.playAgain)
 })
 
 // use require with a reference to bundle the file and use it in this file

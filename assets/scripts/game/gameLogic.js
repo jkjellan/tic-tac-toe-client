@@ -3,8 +3,8 @@
 let boardArray = new Array(9)
 let xLeft = ['x', 'x', 'x', 'x', 'x']
 let oLeft = ['o', 'o', 'o', 'o']
-const scoreArray = [0, 0, 0]
-const playerArray = ['Player One', 'DRAW', 'Player Two']
+let scoreArray = [0, 0, 0]
+let playerArray = ['Player One', 'DRAW', 'Player Two']
 let xWin = false
 let oWin = false
 let winner = ''
@@ -130,7 +130,7 @@ const logicHandler = function () {
   handleClick()
 }
 
-const resetGame = function () {
+const playAgain = function () {
   boardArray = new Array(9)
   xLeft = ['x', 'x', 'x', 'x', 'x']
   oLeft = ['o', 'o', 'o', 'o']
@@ -144,7 +144,24 @@ const resetGame = function () {
   }
 }
 
+const newGame = function () {
+  boardArray = new Array(9)
+  xLeft = ['x', 'x', 'x', 'x', 'x']
+  oLeft = ['o', 'o', 'o', 'o']
+  xWin = false
+  oWin = false
+  winner = ''
+  catsCounter = 0
+  scoreArray = [0, 0, 0]
+  playerArray = ['Player One', 'DRAW', 'Player Two']
+  renderBoard(boardArray, xLeft, oLeft)
+  for (let i = 0; i < 9; i++) {
+    $('#' + i).html('')
+  }
+}
+
 module.exports = {
   logicHandler,
-  resetGame
+  playAgain,
+  newGame
 }

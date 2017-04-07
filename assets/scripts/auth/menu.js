@@ -33,6 +33,10 @@ const newGameSuccess = function () {
 
 const signOutSuccess = function () {
   $('#new-game-wrapper').hide()
+  $('.get-games').hide()
+  $('main').hide()
+  $('.player-stats-history').hide()
+  $('.scoreWrapper').hide()
   $('#sign-out').hide()
   $('#chng-pw-modal').hide()
   $('#sign-up-modal').show()
@@ -41,7 +45,7 @@ const signOutSuccess = function () {
 }
 
 const changePasswordSuccess = function () {
-  $('.new-game-wrapper').hide()
+  $('#new-game-wrapper').hide()
   $('.get-games').hide()
   $('main').hide()
   $('.player-stats-history').hide()
