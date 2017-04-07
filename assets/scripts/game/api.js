@@ -13,6 +13,16 @@ const getGames = () => {
   })
 }
 
+const getFinishedGames = () => {
+  return $.ajax({
+    url: config.apiOrigin + '/games?over=true',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const newGame = () => {
   return $.ajax({
     url: config.apiOrigin + '/games',
@@ -58,6 +68,7 @@ const submitMove = (data) => {
 
 module.exports = {
   getGames,
+  getFinishedGames,
   newGame,
   findGame,
   joinGame,

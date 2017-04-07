@@ -14,6 +14,15 @@ const onGetGames = function (event) {
     .catch(ui.GetGamesFailure)
 }
 
+const onGetFinishedGames = function (event) {
+  event.preventDefault()
+  // const data = getFormFields(this)
+  console.log('event onGetFinishedGames triggered')
+  api.getFinishedGames()
+    .then(ui.getFinishedGamesSuccess)
+    .catch(ui.GetFinishedGamesFailure)
+}
+
 const onNewGame = function (event) {
   event.preventDefault()
   // const data = getFormFields(this)
@@ -52,6 +61,7 @@ const onJoinGame = function (event) {
 
 const addHandlers = () => {
   $('#get-games').on('submit', onGetGames)
+  $('#get-finished-games').on('submit', onGetFinishedGames)
   $('#new-game').on('submit', onNewGame)
   $('#submit-move').on('submit', onSubmitMove)
   $('#find-game').on('submit', onFindGame)

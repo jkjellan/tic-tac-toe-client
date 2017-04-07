@@ -4,13 +4,24 @@ const store = require('../store')
 const gameStats = require('./gameStats.js')
 
 const getGamesSuccess = (ajaxResponse) => {
-  console.log('New Game Success')
+  console.log('Get Games Success')
   console.log(ajaxResponse.games)
   gameStats.statsHandler(ajaxResponse.games)
 }
 
 const getGamesFailure = (error) => {
-  console.log('New Game error')
+  console.log('Get Games error')
+  console.error(error)
+}
+
+const getFinishedGamesSuccess = (ajaxResponse) => {
+  console.log('Get Finished Games Success')
+  // console.log(ajaxResponse.games)
+  gameStats.statsHandler(ajaxResponse.games)
+}
+
+const getFinishedGamesFailure = (error) => {
+  console.log('Get Finished Games error')
   console.error(error)
 }
 
@@ -59,6 +70,8 @@ const joinGameFailure = (error) => {
 module.exports = {
   getGamesSuccess,
   getGamesFailure,
+  getFinishedGamesSuccess,
+  getFinishedGamesFailure,
   newGameSuccess,
   newGameFailure,
   submitMoveSuccess,
