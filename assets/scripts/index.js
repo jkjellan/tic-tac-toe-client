@@ -18,9 +18,17 @@ $(() => {
 const gameLogic = require('./game/gameLogic')
 
 $(() => {
-  console.log('this is my tic tac toe game')
   gameLogic.logicHandler()
   $('#new-game').on('submit', gameLogic.resetGame)
+})
+
+$(() => {
+  $('#sign-out').hide()
+  $('#chng-pw-modal').hide()
+  $('.new-game').hide()
+  $('.get-games').hide()
+  $('main').hide()
+  $('.player-stats-history').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file

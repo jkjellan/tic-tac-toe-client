@@ -1,25 +1,30 @@
 'use strict'
 
 const store = require('../store')
+const menu = require('./menu')
 
 const signUpSuccess = (ajaxResponse) => {
-  console.log('sign up Success')
-  console.log(ajaxResponse)
+  // console.log('sign up Success')
+  // console.log(ajaxResponse)
+  menu.signUpSuccess()
 }
 
 const signUpFailure = (error) => {
-  console.log('sign up error')
-  console.error(error)
+  // console.log('sign up error')
+  // console.error(error)
+  menu.signUpError()
 }
 
 const signInSuccess = (ajaxResponse) => {
-  console.log('sign in success', ajaxResponse)
+  // console.log('sign in success', ajaxResponse)
   store.user = ajaxResponse.user
+  menu.signInSuccess()
 }
 
 const signInFailure = (error) => {
-  console.log('sign in failure')
-  console.error(error)
+  // console.log('sign in failure')
+  // console.error(error)
+  menu.signInError()
 }
 
 const signOutSuccess = () => {
