@@ -2,6 +2,7 @@
 
 const store = require('../store')
 const gameStats = require('./gameStats.js')
+const menu = require('../auth/menu')
 
 const getGamesSuccess = (ajaxResponse) => {
   console.log('Get Games Success')
@@ -31,6 +32,7 @@ const newGameSuccess = (ajaxResponse) => {
   console.log(ajaxResponse)
   store.game = ajaxResponse.game
   console.log(store.game)
+  menu.newGameSuccess()
 }
 
 const newGameFailure = (error) => {

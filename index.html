@@ -17,6 +17,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
       <body>
+        <div class="init">Sign In<br>to Play!</div>
         <header>
           <div class="title">TIC TAC TOE</div>
           <button id="sign-up-modal" type="button" class="btn btn-primary btn-lg sign-up" data-toggle="modal" data-target="#mySignUpModal">
@@ -42,7 +43,7 @@
                            </div>
                            <input type="submit" class="btn btn-default" name="submit" value="Sign up!">
                            <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
-                           <h5 id="tempSignUpError"></h5>
+                           <h5 class="form-error" id="tempSignUpError"></h5>
                        </form>
                       </div>
                 </div>
@@ -71,7 +72,7 @@
                              </div>
                              <input type="submit" class="btn btn-default" name="submit" value="Sign in!">
                              <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
-                             <h5 id="tempSignInError"></h5>
+                             <h5 class="form-error" id="tempSignInError"></h5>
                          </form>
                         </div>
                   </div>
@@ -177,11 +178,13 @@
           <input type="submit" name="submit" value="Submit Move!">
         </form>
 
-        <footer>
+        <!-- new game button should only show when gameboard is absect. button should be center of screen -->
+        <div id="new-game-wrapper">
           <form id="new-game">
             <input type="submit" class="btn btn-primary btn-lg new-game" name="submit" value="New Game">
-
           </form>
+        </div>
+        <footer>
           <form id="get-finished-games">
             <input type="submit" class="btn btn-primary btn-lg get-games" name="submit" value="Get Games">
           </form>

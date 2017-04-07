@@ -1,17 +1,17 @@
 'static'
 const signInSuccess = function () {
-  $('#mySignInModal').on('hidden.bs.model', function () {
-    $('.modal-body').val('')
-  })
-
   $('#mySignInModal').modal('toggle')
   $('#tempSignInError').html('')
-  $('main').show()
-  $('.player-stats-history').show()
+  $('.init').hide()
+  $('#sign-up-modal').hide()
+  $('#sign-in-modal').hide()
+  $('#sign-out').show()
+  $('#chng-pw-modal').show()
+  $('#new-game-wrapper').show()
 }
 
 const signInError = function () {
-  $('#tempSignInError').html('Wrong Email or Password')
+  $('#tempSignInError').html("Wrong Email or Password. Sign up if you don't already have an account")
 }
 
 const signUpSuccess = function () {
@@ -24,9 +24,43 @@ const signUpError = function () {
   $('#tempSignUpError').html("Passwords don't match, or email already taken")
 }
 
+const newGameSuccess = function () {
+  $('#new-game-wrapper').hide()
+  $('.scoreWrapper').show()
+  $('main').show()
+  $('.player-stats-history').show()
+}
+
+const signOutSuccess = function () {
+  $('#new-game-wrapper').hide()
+  $('#sign-out').hide()
+  $('#chng-pw-modal').hide()
+  $('#sign-up-modal').show()
+  $('#sign-in-modal').show()
+  $('.init').show()
+}
+
+const changePasswordSuccess = function () {
+  $('.new-game-wrapper').hide()
+  $('.get-games').hide()
+  $('main').hide()
+  $('.player-stats-history').hide()
+  $('.scoreWrapper').hide()
+
+  $('#sign-out').hide()
+  $('#myPwChangeModal').modal('toggle')
+  $('#chng-pw-modal').hide()
+  $('#sign-up-modal').show()
+  $('#sign-in-modal').show()
+  $('.init').show()
+}
+
 module.exports = {
   signInSuccess,
   signInError,
   signUpSuccess,
-  signUpError
+  signUpError,
+  newGameSuccess,
+  signOutSuccess,
+  changePasswordSuccess
 }

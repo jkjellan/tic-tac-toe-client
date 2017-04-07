@@ -1,5 +1,20 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.form-error {
+  color: red;
+}
+
+.init {
+  font-size: 100px;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 600;
+  color: #323232;
+  text-align: center;
+  position:relative;
+
+}
+
 .win {
   font-size: 18px;
   color: green;
@@ -75,13 +90,19 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin: 0 auto;
 }
 
+#new-game-wrapper {
+  text-align: center;
+  padding-top: 60px;
+  word-wrap: break-word;
+}
 .new-game{
-  position: absolute;
+  position: relative;
   background-color: #00528C;
   border: 0;
-  top: 12px;
-  left: 12px;
-
+  height:270px;
+  width: 270px;
+  font-size: 80px;
+  white-space: normal
 }
 .sign-up {
   position: absolute;
@@ -99,14 +120,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 .change-pw {
   position: absolute;
-  left: 120px;
+  left: 10px;
   top: 12px;
   background-color: #00528C;
   border: 0;
 }
 .sign-out {
   position: absolute;
-  left: 10px;
+  right: 10px;
   top: 12px;
   background-color: #00528C;
   border: 0;
@@ -339,7 +360,7 @@ footer {
 @media (max-width: 1200px) {
   body {
     padding-bottom: 70px;
-    min-width: 750px;
+    min-width: 800px;
   }
 
   main {

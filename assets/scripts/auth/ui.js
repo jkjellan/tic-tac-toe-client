@@ -32,6 +32,7 @@ const signOutSuccess = () => {
   console.log('store is: ', store)
   store.user = null
   console.log('store is: ', store)
+  menu.signOutSuccess()
 }
 
 const signOutFailure = (error) => {
@@ -44,6 +45,7 @@ const changePasswordSuccess = () => {
   console.log('store is: ', store)
   store.user = null
   console.log('store is: ', store)
+  menu.changePasswordSuccess()
 }
 
 const changePasswordFailure = (error) => {

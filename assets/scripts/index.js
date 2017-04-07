@@ -4,6 +4,16 @@ const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 
 $(() => {
+  $('#sign-out').hide()
+  $('#chng-pw-modal').hide()
+  $('#new-game-wrapper').hide()
+  $('.get-games').hide()
+  $('main').hide()
+  $('.player-stats-history').hide()
+  $('.scoreWrapper').hide()
+})
+
+$(() => {
   setAPIOrigin(location, config)
 })
 
@@ -20,15 +30,6 @@ const gameLogic = require('./game/gameLogic')
 $(() => {
   gameLogic.logicHandler()
   $('#new-game').on('submit', gameLogic.resetGame)
-})
-
-$(() => {
-  $('#sign-out').hide()
-  $('#chng-pw-modal').hide()
-  $('.new-game').hide()
-  $('.get-games').hide()
-  $('main').hide()
-  $('.player-stats-history').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file
