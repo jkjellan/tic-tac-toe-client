@@ -5,6 +5,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 h2 {
   text-align: center;
+  margin-bottom: 15px;
 }
 .games-won {
   text-align: center;
@@ -109,7 +110,7 @@ body {
   background: white;
   margin: 0;
   position: relative;
-  padding: 140px 0;
+  padding: 140px 0 100px 0;
   min-width: 1200px;
 }
 
@@ -285,22 +286,23 @@ main {
 }
 
 .board-hist {
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
   background: #323232;
-  margin: 0 auto;
+  margin: 5px;
 }
 .s-hist {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   float: left;
   background: #00528C;
   text-align: center;
-  line-height: 30px;
-  font-size: 30px;
+  line-height: 50px;
+  font-size: 50px;
   color: white;
   font-family: "Raleway", sans-serif;
   font-weight: 200;
+  border: 2px solid white;
 }
 
 footer {

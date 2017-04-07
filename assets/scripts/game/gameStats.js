@@ -1,15 +1,17 @@
 'use strict'
 
-const gameLogic = require('./gameLogic')
-
-const histRend = function (gb) {
-  for (let i = 0; i < gb.length; i++) {
-    $('#s' + i).html(gb[i])
+const statsHandler = function (gamesObjectArray) {
+  console.log(gamesObjectArray)
+  $('.games-won').html('')
+  let k = 0
+  for (let i = 0; i < gamesObjectArray.length; i++) {
+    $('.games-won').append('<div id="b' + i + '" class="board-hist">')
+    for (let j = 0; j < 9; j++) {
+      $('#b' + i).append('<div id="s' + k + '" class="s-hist"></div>')
+      $('#s' + k).html(gamesObjectArray[i].cells[j])
+      k = k + 1
+    }
   }
-}
-
-const statsHandler = function (gamesObject) {
-  histRend(gamesObject[0].cells)
 }
 
 module.exports = {
