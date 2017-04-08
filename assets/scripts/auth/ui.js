@@ -51,6 +51,7 @@ const changePasswordSuccess = () => {
 const changePasswordFailure = (error) => {
   console.log('change password failure')
   console.error(error)
+  menu.changePasswordError()
 }
 
 module.exports = {

@@ -33,6 +33,7 @@ const newGameSuccess = function () {
 
 const signOutSuccess = function () {
   $('#new-game-wrapper').hide()
+  $('#play-again-wrapper').hide()
   $('.get-games').hide()
   $('main').hide()
   $('.player-stats-history').hide()
@@ -46,6 +47,7 @@ const signOutSuccess = function () {
 
 const changePasswordSuccess = function () {
   $('#new-game-wrapper').hide()
+  $('#play-again-wrapper').hide()
   $('.get-games').hide()
   $('main').hide()
   $('.player-stats-history').hide()
@@ -59,6 +61,10 @@ const changePasswordSuccess = function () {
   $('.init').show()
 }
 
+const changePasswordError = function () {
+  $('#tempChangePasswordError').html('Incorrect Old Password. Pleaes try again.')
+}
+
 module.exports = {
   signInSuccess,
   signInError,
@@ -66,5 +72,6 @@ module.exports = {
   signUpError,
   newGameSuccess,
   signOutSuccess,
-  changePasswordSuccess
+  changePasswordSuccess,
+  changePasswordError
 }

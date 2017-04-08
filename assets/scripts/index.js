@@ -2,11 +2,15 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
+const authEvents = require('./auth/events.js')
+const gameEvents = require('./game/events.js')
+const gameLogic = require('./game/gameLogic')
 
 $(() => {
   $('#sign-out').hide()
   $('#chng-pw-modal').hide()
   $('#new-game-wrapper').hide()
+  $('#play-again-wrapper').hide()
   $('.get-games').hide()
   $('main').hide()
   $('.player-stats-history').hide()
@@ -17,15 +21,10 @@ $(() => {
   setAPIOrigin(location, config)
 })
 
-const authEvents = require('./auth/events.js')
-const gameEvents = require('./game/events.js')
-
 $(() => {
   authEvents.addHandlers()
   gameEvents.addHandlers()
 })
-
-const gameLogic = require('./game/gameLogic')
 
 $(() => {
   gameLogic.logicHandler()

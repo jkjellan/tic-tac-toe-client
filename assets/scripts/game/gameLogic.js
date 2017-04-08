@@ -10,9 +10,6 @@ let oWin = false
 let winner = ''
 let catsCounter = 0
 
-$('.p1-prompt-text').html("It's your turn, " + playerArray[0] + '!')
-$('.p2-prompt-text').html('')
-
 const checkWin = function (array) {
   const winArray = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [2, 4, 6], [0, 4, 8]]
 
@@ -32,6 +29,7 @@ const checkWin = function (array) {
     })
 
     if (xWin || oWin) {
+      $('#play-again-wrapper').show()
       return true
     }
   }
@@ -120,6 +118,7 @@ const handleClick = function () {
       // submits the game form, triggering ajax PATCH request to upate game
       scoreArray[1] = scoreArray[1] + 1
       renderBoard(boardArray, xLeft, oLeft)
+      $('#play-again-wrapper').show()
     }
     // submits the game form, triggering ajax PATCH request to upate game
     $('#submit-move').submit()
@@ -131,6 +130,8 @@ const logicHandler = function () {
 }
 
 const playAgain = function () {
+  $('#play-again-wrapper').hide()
+  event.preventDefault()
   boardArray = new Array(9)
   xLeft = ['x', 'x', 'x', 'x', 'x']
   oLeft = ['o', 'o', 'o', 'o']
@@ -142,9 +143,12 @@ const playAgain = function () {
   for (let i = 0; i < 9; i++) {
     $('#' + i).html('')
   }
+  $('.p1-prompt-text').html("It's your turn, " + playerArray[0] + '!')
+  $('.p2-prompt-text').html('')
 }
 
 const newGame = function () {
+  event.preventDefault()
   boardArray = new Array(9)
   xLeft = ['x', 'x', 'x', 'x', 'x']
   oLeft = ['o', 'o', 'o', 'o']
@@ -158,6 +162,8 @@ const newGame = function () {
   for (let i = 0; i < 9; i++) {
     $('#' + i).html('')
   }
+  $('.p1-prompt-text').html("It's your turn, " + playerArray[0] + '!')
+  $('.p2-prompt-text').html('')
 }
 
 module.exports = {

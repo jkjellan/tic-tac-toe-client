@@ -91,18 +91,45 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 #new-game-wrapper {
-  text-align: center;
-  padding-top: 60px;
   word-wrap: break-word;
+  position: absolute;
+  left: 50%;
+  top: 17%;
+}
+#play-again-wrapper {
+  word-wrap: break-word;
+  position: absolute;
+  left: 50%;
+  top: 17%;
+
 }
 .new-game{
-  position: relative;
   background-color: #00528C;
   border: 0;
   height:270px;
   width: 270px;
   font-size: 80px;
-  white-space: normal
+  white-space: normal;
+  position: relative;
+  left: -50%;
+}
+.play-again {
+  background: rgba(255,255,255,.9);
+  border: 0;
+  height:270px;
+  width: 270px;
+  font-size: 80px;
+  white-space: normal;
+  position: relative;
+  left: -50%;
+  top: 20%;
+  color: #00528C;
+  font-weight:800;
+}
+
+.play-again.btn-primary:hover {
+    background: rgba(255,255,255,1);
+    color: #00528C;
 }
 .sign-up {
   position: absolute;

@@ -101,6 +101,7 @@
                                </div>
                                <input type="submit" class="btn btn-default" name="submit" value="Change Password!">
                                <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                               <h5 class="form-error" id="tempChangePasswordError"></h5>
                            </form>
                           </div>
                     </div>
@@ -127,7 +128,7 @@
         <main>
             <div class="p1-prompt">
               <div class="p1-prompt-inner">
-                <p class="p1-prompt-text">It's your turn, Player One!</p>
+                <p class="p1-prompt-text"></p>
               </div>
             </div>
             <div class="p1">
@@ -182,6 +183,11 @@
         <div id="new-game-wrapper">
           <form id="new-game">
             <input type="submit" class="btn btn-primary btn-lg new-game" name="submit" value="New Game">
+          </form>
+        </div>
+        <div id="play-again-wrapper">
+          <form id="play-again">
+            <input type="submit" class="btn btn-primary btn-lg play-again" name="submit" value="Play Again">
           </form>
         </div>
         <footer>
