@@ -63,6 +63,8 @@ const addHandlers = () => {
   $('#get-games').on('submit', onGetGames)
   $('#get-finished-games').on('submit', onGetFinishedGames)
   $('#new-game').on('submit', onNewGame)
+  $('#play-again').on('submit', onNewGame)
+
   $('#submit-move').on('submit', onSubmitMove)
   $('#find-game').on('submit', onFindGame)
   $('#join-game').on('submit', onJoinGame)

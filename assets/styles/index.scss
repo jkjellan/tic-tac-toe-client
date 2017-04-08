@@ -16,17 +16,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .win {
-  font-size: 18px;
+  font-size: 22px;
   color: green;
   padding: 0 20px;
 }
 .loss {
-  font-size: 18px;
+  font-size: 22px;
   color: red;
   padding: 0 20px;
 }
 .draw {
-  font-size: 18px;
+  font-size: 22px;
   padding: 0 20px;
 }
 .hiddenForm {
@@ -34,12 +34,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 .game-hist-header{
   text-align: center;
-  margin: 0 0 5px 0;
   font-size: 30px;
 }
 .game-stats {
   text-align: center;
   padding-bottom: 20px;
+  font-size: 50px;
+  font-weight: 800;
 }
 .games-won {
   text-align: center;
@@ -81,12 +82,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin: 0 auto;
   display: none;
 }
-.get-games {
+
+.finished-games-wrapper {
   position: absolute;
+  left: 50%;
+  top: 12px;
+}
+.get-games {
+  position: relative;
   background-color: #00528C;
   border: 0;
-  top: 12px;
-  left: 145px;
+  left: -50%;
   margin: 0 auto;
 }
 
@@ -94,13 +100,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   word-wrap: break-word;
   position: absolute;
   left: 50%;
-  top: 17%;
+  top: 150px;
 }
 #play-again-wrapper {
   word-wrap: break-word;
   position: absolute;
   left: 50%;
-  top: 17%;
+  top: 150px;
 
 }
 .new-game{

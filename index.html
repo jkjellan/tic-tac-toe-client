@@ -162,11 +162,11 @@
             </div>
         </main>
         <div class="player-stats-history">
-          <div class="game-hist-header">Player One - Game History</div>
+          <div class="game-hist-header"></div>
             <div class="game-stats">
-              <span id="w" class="win">Win: 0</span>
-              <span id="l" class="loss">Loss: 0</span>
-              <span id="d" class="draw">Draw: 0</span>
+              <span id="w" class="win"></span>
+              <span id="l" class="loss"></span>
+              <span id="d" class="draw"></span>
             </div>
           <div class="games-won">
 
@@ -191,11 +191,13 @@
           </form>
         </div>
         <footer>
-          <form id="get-finished-games">
-            <input type="submit" class="btn btn-primary btn-lg get-games" name="submit" value="Get Games">
-          </form>
+          <div class="finished-games-wrapper">
+            <form id="get-finished-games">
+              <input type="submit" class="btn btn-primary btn-lg get-games" name="submit" value="Game History">
+            </form>
+          </div>
 
-          <form id="find-game">
+          <!-- <form id="find-game">
             <input type="submit" class="btn btn-primary btn-lg find-game" name="submit" value="Find Game">
           </form>
 
@@ -205,7 +207,7 @@
 
           <form id="player-stats">
             <input type="submit" class="btn btn-primary btn-lg player-stats" name="submit" value="Player Stats">
-          </form>
+          </form> -->
         </footer>
 
   </body>

@@ -17,9 +17,10 @@ const getGamesFailure = (error) => {
 
 const getFinishedGamesSuccess = (ajaxResponse) => {
   console.log('Get Finished Games Success')
-  // console.log(ajaxResponse.games)
+  console.log(ajaxResponse.games)
   gameStats.renderHistory(ajaxResponse.games)
   gameStats.wonLost(ajaxResponse.games)
+  $('.player-stats-history').toggle()
 }
 
 const getFinishedGamesFailure = (error) => {

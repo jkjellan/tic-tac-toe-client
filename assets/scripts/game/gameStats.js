@@ -1,7 +1,7 @@
 'use strict'
 
 const renderHistory = function (gamesObjectArray) {
-  console.log(gamesObjectArray)
+  // console.log(gamesObjectArray)
   $('.games-won').html('')
   let k = 0
   for (let i = 0; i < gamesObjectArray.length; i++) {
@@ -39,7 +39,7 @@ const wonLost = function (gamesObjectArray) {
       })
 
       // console.log(xWin, oWin)
-      console.log('in wonLost')
+      // console.log('in wonLost')
       if (xWin) {
         $('#b' + j).append('<div class="win">Win</div>')
         winCount++

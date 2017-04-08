@@ -28,13 +28,15 @@ const newGameSuccess = function () {
   $('#new-game-wrapper').hide()
   $('.scoreWrapper').show()
   $('main').show()
-  $('.player-stats-history').show()
+  // $('.player-stats-history').show()
+  // $('#get-finished-games').show()
+  $('.finished-games-wrapper').show()
 }
 
 const signOutSuccess = function () {
   $('#new-game-wrapper').hide()
   $('#play-again-wrapper').hide()
-  $('.get-games').hide()
+
   $('main').hide()
   $('.player-stats-history').hide()
   $('.scoreWrapper').hide()
@@ -43,12 +45,14 @@ const signOutSuccess = function () {
   $('#sign-up-modal').show()
   $('#sign-in-modal').show()
   $('.init').show()
+  $('.finished-games-wrapper').hide()
 }
 
 const changePasswordSuccess = function () {
   $('#new-game-wrapper').hide()
   $('#play-again-wrapper').hide()
-  $('.get-games').hide()
+  // $('.get-games').hide()
+  $('.finished-games-wrapper').hide()
   $('main').hide()
   $('.player-stats-history').hide()
   $('.scoreWrapper').hide()

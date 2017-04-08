@@ -11,7 +11,7 @@ $(() => {
   $('#chng-pw-modal').hide()
   $('#new-game-wrapper').hide()
   $('#play-again-wrapper').hide()
-  $('.get-games').hide()
+  $('.finished-games-wrapper').hide()
   $('main').hide()
   $('.player-stats-history').hide()
   $('.scoreWrapper').hide()
