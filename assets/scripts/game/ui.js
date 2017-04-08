@@ -1,8 +1,9 @@
 'use strict'
 
 const store = require('../store')
-const gameStats = require('./gameStats.js')
+const gameStats = require('./gameStats')
 const menu = require('../auth/menu')
+const ux = require('./ux')
 
 const getGamesSuccess = (ajaxResponse) => {
   console.log('Get Games Success')
@@ -20,7 +21,7 @@ const getFinishedGamesSuccess = (ajaxResponse) => {
   console.log(ajaxResponse.games)
   gameStats.renderHistory(ajaxResponse.games)
   gameStats.wonLost(ajaxResponse.games)
-  $('.player-stats-history').toggle()
+  ux.toggleGameHistory()
 }
 
 const getFinishedGamesFailure = (error) => {
