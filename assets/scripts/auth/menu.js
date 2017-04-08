@@ -8,6 +8,7 @@ const signInSuccess = function () {
   $('#sign-out').show()
   $('#chng-pw-modal').show()
   $('#new-game-wrapper').show()
+  $('#toggleHist').val('Player One Game History')
 }
 
 const signInError = function () {

@@ -100,13 +100,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   word-wrap: break-word;
   position: absolute;
   left: 50%;
-  top: 150px;
+  top: 163px;
 }
 #play-again-wrapper {
   word-wrap: break-word;
   position: absolute;
   left: 50%;
-  top: 150px;
+  top: 163px;
 
 }
 .new-game{
@@ -185,7 +185,7 @@ body {
   background: white;
   margin: 0;
   position: relative;
-  padding: 140px 0 100px 0;
+  padding: 150px 0 100px 0;
   min-width: 1200px;
 }
 
@@ -212,7 +212,7 @@ header {
   background: none;
   height: 70px;
   line-height: 70px;
-  padding: 0 10px;
+  margin: 5px 13px;
   font-size: 30px;
   /*font-family: "Raleway", sans-serif;*/
   font-family: 'Noto Sans', sans-serif;
