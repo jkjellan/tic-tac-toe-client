@@ -66,7 +66,7 @@ const changePasswordSuccess = function () {
 }
 
 const changePasswordError = function () {
-  $('#tempChangePasswordError').html('Incorrect Old Password. Pleaes try again.')
+  $('#tempChangePasswordError').html('Incorrect Old Password. Please try again.')
 }
 
 module.exports = {
