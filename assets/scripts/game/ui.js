@@ -7,47 +7,47 @@ const menu = require('../auth/menu')
 const ux = require('./ux')
 
 const getGamesSuccess = (ajaxResponse) => {
-  console.log('Get Games Success')
-  console.log(ajaxResponse.games)
+  // console.log('Get Games Success')
+  // console.log(ajaxResponse.games)
   gameStats.renderHistory(ajaxResponse.games)
 }
 
 const getGamesFailure = (error) => {
-  console.log('Get Games error')
-  console.error(error)
+  // console.log('Get Games error')
+  // console.error(error)
 }
 
 const getFinishedGamesSuccess = (ajaxResponse) => {
-  console.log('Get Finished Games Success')
-  console.log(ajaxResponse.games)
+  // console.log('Get Finished Games Success')
+  // console.log(ajaxResponse.games)
   gameStats.renderHistory(ajaxResponse.games)
   gameStats.wonLost(ajaxResponse.games)
   ux.toggleGameHistory()
 }
 
 const getFinishedGamesFailure = (error) => {
-  console.log('Get Finished Games error')
-  console.error(error)
+  // console.log('Get Finished Games error')
+  // console.error(error)
 }
 
 const newGameSuccess = (ajaxResponse) => {
-  console.log('New Game Success')
-  console.log(ajaxResponse)
+  // console.log('New Game Success')
+  // console.log(ajaxResponse)
   store.game = ajaxResponse.game
-  console.log(store.game)
+  // console.log(store.game)
   gameLogic.renderBoard(store.game.cells)
   // gameLogic.newGame()
   menu.newGameSuccess()
 }
 
 const newGameFailure = (error) => {
-  console.log('New Game error')
-  console.error(error)
+  // console.log('New Game error')
+  // console.error(error)
 }
 
 const submitMoveSuccess = (ajaxResponse) => {
-  console.log('Submit Move Success')
-  console.log(ajaxResponse)
+  // console.log('Submit Move Success')
+  // console.log(ajaxResponse)
   store.game = ajaxResponse.game
   // Checks for win condition on 'cells' array that AJAX returns.
   // If 'over' already equals true, skips check.
@@ -60,28 +60,28 @@ const submitMoveSuccess = (ajaxResponse) => {
 }
 
 const submitMoveFailure = (error) => {
-  console.log('Submit Move error')
-  console.error(error)
+  // console.log('Submit Move error')
+  // console.error(error)
 }
 
 const findGameSuccess = (ajaxResponse) => {
-  console.log('Find Game Success')
-  console.log(ajaxResponse)
+  // console.log('Find Game Success')
+  // console.log(ajaxResponse)
 }
 
 const findGameFailure = (error) => {
-  console.log('Find Game Error')
-  console.error(error)
+  // console.log('Find Game Error')
+  // console.error(error)
 }
 
 const joinGameSuccess = (ajaxResponse) => {
-  console.log('Join Game Success')
-  console.log(ajaxResponse)
+  // console.log('Join Game Success')
+  // console.log(ajaxResponse)
 }
 
 const joinGameFailure = (error) => {
-  console.log('Join Game Error')
-  console.error(error)
+  // console.log('Join Game Error')
+  // console.error(error)
 }
 
 module.exports = {

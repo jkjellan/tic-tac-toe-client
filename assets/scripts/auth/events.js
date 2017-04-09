@@ -22,7 +22,7 @@ const onSignIn = function (event) {
 }
 
 const onSignOut = function (event) {
-  console.log('sign-out ran')
+  // console.log('sign-out ran')
   // const data = getFormFields(this)
   event.preventDefault()
   api.signOut()
@@ -31,7 +31,7 @@ const onSignOut = function (event) {
 }
 
 const onChangePassword = function (event) {
-  console.log('changePassword ran')
+  // console.log('changePassword ran')
   const data = getFormFields(this)
   event.preventDefault()
   api.changePassword(data)

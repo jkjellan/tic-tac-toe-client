@@ -55,7 +55,7 @@ const joinGame = (data) => {
 }
 
 const submitMove = (data) => {
-  console.log(store.game)
+  // console.log(store.game)
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',

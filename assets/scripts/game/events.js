@@ -8,7 +8,7 @@ const ui = require('./ui')
 const onGetGames = function (event) {
   event.preventDefault()
   // const data = getFormFields(this)
-  console.log('event onGetGames triggered')
+  // console.log('event onGetGames triggered')
   api.getGames()
     .then(ui.getGamesSuccess)
     .catch(ui.GetGamesFailure)
@@ -17,7 +17,7 @@ const onGetGames = function (event) {
 const onGetFinishedGames = function (event) {
   event.preventDefault()
   // const data = getFormFields(this)
-  console.log('event onGetFinishedGames triggered')
+  // console.log('event onGetFinishedGames triggered')
   api.getFinishedGames()
     .then(ui.getFinishedGamesSuccess)
     .catch(ui.GetFinishedGamesFailure)
@@ -26,7 +26,7 @@ const onGetFinishedGames = function (event) {
 const onNewGame = function (event) {
   event.preventDefault()
   // const data = getFormFields(this)
-  console.log('event onNewGame triggered')
+  // console.log('event onNewGame triggered')
   api.newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
@@ -35,8 +35,8 @@ const onNewGame = function (event) {
 const onSubmitMove = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('event onSubmitMove triggered')
-  console.log(data)
+  // console.log('event onSubmitMove triggered')
+  // console.log(data)
   api.submitMove(data)
     .then(ui.submitMoveSuccess)
     .catch(ui.submitMoveFailure)
@@ -45,7 +45,7 @@ const onSubmitMove = function (event) {
 const onFindGame = function (event) {
   event.preventDefault()
   // const data = getFormFields(this)
-  console.log('event onFindGame triggered')
+  // console.log('event onFindGame triggered')
   api.findGame()
     .then(ui.findGameSuccess)
     .catch(ui.findGameFailure)
@@ -54,7 +54,7 @@ const onFindGame = function (event) {
 const onJoinGame = function (event) {
   event.preventDefault()
   // const data = getFormFields(this)
-  console.log('event onFindGame triggered')
+  // console.log('event onFindGame triggered')
   api.joinGame()
     .then(ui.joinGameSuccess)
     .catch(ui.joinGameFailure)

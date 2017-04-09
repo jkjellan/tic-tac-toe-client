@@ -33,7 +33,7 @@ const signUpError = function () {
 
 const newGameSuccess = function () {
   $('#new-game-wrapper').hide()
-  $('.scoreWrapper').show()
+  // $('.scoreWrapper').show()
   $('main').show()
   // $('.player-stats-history').show()
   // $('#get-finished-games').show()
