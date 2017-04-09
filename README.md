@@ -2,8 +2,14 @@
 
 # Tic-Tac-Toe Project Client
 
-Description here
+- Live app: [Tic-Tac-Toe-Client](https://jkjellan.github.io/tic-tac-toe-client/)
 
+This is Project One "Tic-Tac-Toe" for General Assembly cohort WDI-LM01.
+
+![Screenshot of Tic-Tac-Toe](http://imgur.com/SUvVvec)
+
+
+##Project Requirements
 ## Installation
 
 1. Install with 'npm install'.
