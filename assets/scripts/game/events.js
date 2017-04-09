@@ -36,6 +36,7 @@ const onSubmitMove = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   console.log('event onSubmitMove triggered')
+  console.log(data)
   api.submitMove(data)
     .then(ui.submitMoveSuccess)
     .catch(ui.submitMoveFailure)

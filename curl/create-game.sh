@@ -3,4 +3,4 @@ URL_PATH="/games"
 curl "${API}${URL_PATH}" \
   --include \
   --request POST \
-  --header "Authorization: Token token=BAhJIiVlYjcxYzYyNTJiMjVmZGM1NTY4ZjZlMzM3ZjMxY2RkYgY6BkVG--9621f11fe596d00aa49c3861330917b0c02c841b"
+  --header "Authorization: Token token=BAhJIiUwNGM2N2RmMjhjNjU0MTdhNzRjMWI3MWMyZmVlMGViMgY6BkVG--8eee7b2591b10ed788530f66251de2175b3d4805"

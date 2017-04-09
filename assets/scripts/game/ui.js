@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const gameLogic = require('./gameLogic')
 const gameStats = require('./gameStats')
 const menu = require('../auth/menu')
 const ux = require('./ux')
@@ -34,6 +35,8 @@ const newGameSuccess = (ajaxResponse) => {
   console.log(ajaxResponse)
   store.game = ajaxResponse.game
   console.log(store.game)
+  gameLogic.renderBoard(store.game.cells)
+  // gameLogic.newGame()
   menu.newGameSuccess()
 }
 
@@ -45,6 +48,15 @@ const newGameFailure = (error) => {
 const submitMoveSuccess = (ajaxResponse) => {
   console.log('Submit Move Success')
   console.log(ajaxResponse)
+  store.game = ajaxResponse.game
+  // Checks for win condition on 'cells' array that AJAX returns.
+  // If 'over' already equals true, skips check.
+  if (gameLogic.checkWin(store.game.cells) && !store.game.over) {
+    $('#game-over').val('true')
+    $('#submit-move').submit()
+  }
+
+  gameLogic.renderBoard(store.game.cells)
 }
 
 const submitMoveFailure = (error) => {
