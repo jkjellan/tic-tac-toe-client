@@ -7,6 +7,7 @@ const signUpSuccess = (ajaxResponse) => {
   // console.log('sign up Success')
   // console.log(ajaxResponse)
   menu.signUpSuccess()
+
 }
 
 const signUpFailure = (error) => {

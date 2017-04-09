@@ -51,13 +51,13 @@ const wonLost = function (gamesObjectArray) {
       }
     }
     if (!xWin && !oWin) {
-      $('#b' + j).append('<div class="draw">Draw</div>')
+      $('#b' + j).append('<div class="draw">Tie</div>')
       drawCount++
     }
   }
   $('#w').html('Win: ' + winCount)
   $('#l').html('Loss: ' + lossCount)
-  $('#d').html('Draw: ' + drawCount)
+  $('#d').html('Tie: ' + drawCount)
 }
 
 module.exports = {

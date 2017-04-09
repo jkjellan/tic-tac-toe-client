@@ -157,7 +157,7 @@ const newGame = function () {
   winner = ''
   catsCounter = 0
   scoreArray = [0, 0, 0]
-  playerArray = ['Player One', 'DRAW', 'Player Two']
+  playerArray = ['Player One', 'Tie', 'Player Two']
   renderBoard(boardArray, xLeft, oLeft)
   for (let i = 0; i < 9; i++) {
     $('#' + i).html('')
