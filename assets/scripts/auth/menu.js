@@ -22,6 +22,9 @@ const signUpSuccess = function () {
   $('#tempSignUpError').html('')
   $('#mySignUpModal').modal('toggle')
   $('#mySignInModal').modal('toggle')
+  // needed because previous sign-in error will still show without below code
+  $('#tempSignInError').html('')
+  $('#sign-in').find('input:text, input:password, select, textarea').val('')
 }
 
 const signUpError = function () {
@@ -61,7 +64,6 @@ const changePasswordSuccess = function () {
   $('main').hide()
   $('.player-stats-history').hide()
   $('.scoreWrapper').hide()
-
   $('#sign-out').hide()
   $('#myPwChangeModal').modal('toggle')
   $('#chng-pw-modal').hide()
