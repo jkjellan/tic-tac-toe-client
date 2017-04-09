@@ -6,7 +6,7 @@
 
 This is Project One "Tic-Tac-Toe" for General Assembly cohort WDI-LM01.
 
-![Screenshot of Tic-Tac-Toe](http://imgur.com/SUvVvec)
+![Screenshot of Tic-Tac-Toe](http://i.imgur.com/SUvVvec.png)
 
 
 ##Project Requirements
