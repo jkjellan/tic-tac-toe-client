@@ -68,7 +68,6 @@ const addHandlers = () => {
   $('#submit-move').on('submit', onSubmitMove)
   $('#find-game').on('submit', onFindGame)
   $('#join-game').on('submit', onJoinGame)
-
 }
 
 module.exports = {

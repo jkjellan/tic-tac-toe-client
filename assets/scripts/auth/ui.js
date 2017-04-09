@@ -16,7 +16,7 @@ const signUpFailure = (error) => {
 }
 
 const signInSuccess = (ajaxResponse) => {
-  // console.log('sign in success', ajaxResponse)
+  console.log('sign in success', ajaxResponse.user)
   store.user = ajaxResponse.user
   menu.signInSuccess()
 }

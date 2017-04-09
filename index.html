@@ -17,12 +17,18 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
       <body>
-        <div class="init">Sign In<br>to Play!</div>
+        <div class="init">
+          <button id="sign-in-modal" type="button" class="btn btn-primary btn-lg sign-in" data-toggle="modal" data-target="#mySignInModal">
+            Sign In
+          </button>
+          <div class="initText">OR</div>
+          <button id="sign-up-modal" type="button" class="btn btn-primary btn-lg sign-up" data-toggle="modal" data-target="#mySignUpModal">
+            Create an Account
+          </button>
+        </div>
         <header>
           <div class="title">TIC TAC TOE</div>
-          <button id="sign-up-modal" type="button" class="btn btn-primary btn-lg sign-up" data-toggle="modal" data-target="#mySignUpModal">
-            Sign Up
-          </button>
+          <div class="user-signed-in"></div>
           <!-- MODAL -->
           <div class="modal fade" id="mySignUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
               <div class="modal-dialog" role="document">
@@ -51,9 +57,7 @@
             </div>
             <!-- END MODAL -->
 
-            <button id="sign-in-modal" type="button" class="btn btn-primary btn-lg sign-in" data-toggle="modal" data-target="#mySignInModal">
-              Sign In
-            </button>
+
             <!-- MODAL -->
             <div class="modal fade" id="mySignInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">

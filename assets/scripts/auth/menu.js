@@ -1,4 +1,6 @@
 'static'
+const store = require('../store')
+
 const signInSuccess = function () {
   $('#mySignInModal').modal('toggle')
   $('#tempSignInError').html('')
@@ -9,6 +11,7 @@ const signInSuccess = function () {
   $('#chng-pw-modal').show()
   $('#new-game-wrapper').show()
   $('#toggleHist').val('Player One Game History')
+  $('.user-signed-in').html(store.user.email)
 }
 
 const signInError = function () {
@@ -47,6 +50,7 @@ const signOutSuccess = function () {
   $('#sign-in-modal').show()
   $('.init').show()
   $('.finished-games-wrapper').hide()
+  $('.user-signed-in').html('')
 }
 
 const changePasswordSuccess = function () {
@@ -64,6 +68,7 @@ const changePasswordSuccess = function () {
   $('#sign-up-modal').show()
   $('#sign-in-modal').show()
   $('.init').show()
+  $('.user-signed-in').html('')
 }
 
 const changePasswordError = function () {
