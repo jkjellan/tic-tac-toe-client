@@ -30,6 +30,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   border: 0;
   height: 140px;
   white-space: normal;
+  box-shadow: 10px 10px 5px #888888;
 }
 .sign-in {
   font-size: 30px;
@@ -39,6 +40,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   top: 12px;
   background-color: #00528C;
   border: 0;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .win {
@@ -138,12 +140,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .new-game{
   background-color: #00528C;
   border: 0;
-  height:270px;
-  width: 270px;
+  height:300px;
+  width: 300px;
   font-size: 80px;
   white-space: normal;
   position: relative;
   left: -50%;
+  border-radius:270px;
+  box-shadow: 10px 10px 5px #888888;
+}
+.btn:focus,.btn:active {
+  outline:none !important;
 }
 .play-again {
   background: rgba(255,255,255,.9);
@@ -256,8 +263,9 @@ header {
 .score {
   font-family: 'Noto Sans', sans-serif;
   background: #323232;
-  padding: 0 12px;
+  padding: 0 15px;
   color: white;
+  border-radius: 10px;
 }
 
 .p1-prompt {
@@ -290,6 +298,7 @@ width: 230px;
   width: 70px;
   position: absolute;
   left: 0;
+  border-radius: 0 10px 10px 0;
 
 }
 .x-sideline {
@@ -334,7 +343,7 @@ width: 230px;
   position: absolute;
   right: 0;
   top: 140px;
-
+  border-radius: 10px 0 0 10px;
 }
 .o-sideline {
   font-family: 'Noto Sans', sans-serif;
