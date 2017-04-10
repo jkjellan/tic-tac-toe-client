@@ -107,8 +107,8 @@ const handleClick = function () {
       $('#cell-value').val('x')
       $('#game-over').val('false')
       $('#submit-move').submit()
-      $('.p1-prompt-text').html("It's your turn, " + playerArray[2] + '!')
-      $('.p2-prompt-text').html('')
+      $('.p2-prompt-text').html("It's your turn, " + playerArray[2] + '!')
+      $('.p1-prompt-text').html('')
     } else if ((length % 2 === 1) && (squareClicked === undefined || squareClicked === '') && (store.game.over === false)) {
       $('#cell-index').val(+$(this).attr('id'))
       $('#cell-value').val('o')
