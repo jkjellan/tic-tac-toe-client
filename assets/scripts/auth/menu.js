@@ -10,7 +10,7 @@ const signInSuccess = function () {
   $('#sign-out').show()
   $('#chng-pw-modal').show()
   $('#new-game-wrapper').show()
-  $('#toggleHist').val('Player One Game History')
+  $('#toggleHist').val('Player X Game History')
   $('.user-signed-in').html(store.user.email)
 }
 

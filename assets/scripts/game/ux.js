@@ -5,7 +5,7 @@ const toggleGameHistory = function () {
     if ($('.player-stats-history').is(':visible')) {
       $('#toggleHist').val('Collapse History')
     } else {
-      $('#toggleHist').val('Player One Game History')
+      $('#toggleHist').val('Player X Game History')
     }
   })
 }

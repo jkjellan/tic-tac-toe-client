@@ -3,7 +3,7 @@ const store = require('../store')
 
 // let boardArray = new Array(9)
 let scoreArray = [0, 0, 0]
-let playerArray = ['Player One', 'Tie', 'Player Two']
+let playerArray = ['Player X', 'Tie', 'Player O']
 
 const checkWin = function (array) {
   const winArray = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [2, 4, 6], [0, 4, 8]]
@@ -42,16 +42,16 @@ const checkWin = function (array) {
         scoreArray[0] = scoreArray[0] + 1
         $('#play-again-wrapper').show()
       }
-      $('.p1-prompt-text').html('Player One Wins!')
-      $('.p2-prompt-text').html('Player One Wins!')
+      $('.p1-prompt-text').html('Player X Wins!')
+      $('.p2-prompt-text').html('Player X Wins!')
       return true
     } else if (oWin) {
       if (store.game.over === false) {
         scoreArray[2] = scoreArray[2] + 1
         $('#play-again-wrapper').show()
       }
-      $('.p1-prompt-text').html('Player Two Wins!')
-      $('.p2-prompt-text').html('Player Two Wins!')
+      $('.p1-prompt-text').html('Player O Wins!')
+      $('.p2-prompt-text').html('Player O Wins!')
       return true
     }
   }
@@ -138,7 +138,7 @@ const playAgain = function () {
 const newGame = function () {
   $('#play-again-wrapper').hide()
   scoreArray = [0, 0, 0]
-  playerArray = ['Player One', 'Tie', 'Player Two']
+  playerArray = ['Player X', 'Tie', 'Player O']
   // renderBoard(store.game.cells)
   for (let i = 0; i < 9; i++) {
     $('#' + i).html('')
