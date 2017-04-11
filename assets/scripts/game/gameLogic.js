@@ -98,6 +98,10 @@ const renderBoard = function (array) {
 
 const handleClick = function () {
   $('.square').on('click', function (e) {
+    // turns off click on board squares immediately after submission
+    // to prevent double clicks.  Will turn click back on in ui.js after
+    // AJAX PATCH success
+    $('.square').off()
     const squareClicked = store.game.cells[+$(this).attr('id')]
     const length = store.game.cells.filter((e) => { return (e !== undefined && e !== '') }).length
 
@@ -107,6 +111,7 @@ const handleClick = function () {
       $('#cell-value').val('x')
       $('#game-over').val('false')
       $('#submit-move').submit()
+
       $('.p2-prompt-text').html("It's your turn, " + playerArray[2] + '!')
       $('.p1-prompt-text').html('')
     } else if ((length % 2 === 1) && (squareClicked === undefined || squareClicked === '') && (store.game.over === false)) {
@@ -114,6 +119,7 @@ const handleClick = function () {
       $('#cell-value').val('o')
       $('#game-over').val('false')
       $('#submit-move').submit()
+
       $('.p1-prompt-text').html("It's your turn, " + playerArray[0] + '!')
       $('.p2-prompt-text').html('')
     }
