@@ -116,7 +116,7 @@ const handleClick = function () {
     if ((length % 2 === 0) && (localLength % 2 === 0) && (squareClicked === undefined || squareClicked === '') && (store.game.over === false)) {
       // fill up local gameboard array, which I use to control for AJAX timing throwing off x & o alternating
       localArray[+$(this).attr('id')] = 'x'
-
+      console.log(localArray)
       // click on board fills out form and submits AJAX PATCH request.  All logic handled after Ajax response.
       $('#cell-index').val(+$(this).attr('id'))
       $('#cell-value').val('x')
@@ -128,6 +128,7 @@ const handleClick = function () {
     } else if ((length % 2 === 1) && (localLength % 2 === 1) && (squareClicked === undefined || squareClicked === '') && (store.game.over === false)) {
       // fill up local gameboard array, which I use to control for AJAX timing throwing off x & o alternating
       localArray[+$(this).attr('id')] = 'o'
+      console.log(localArray)
       // click on board fills out form and submits AJAX PATCH request.  All logic handled after Ajax response.
       $('#cell-index').val(+$(this).attr('id'))
       $('#cell-value').val('o')
