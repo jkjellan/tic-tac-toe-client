@@ -98,10 +98,9 @@ const renderBoard = function (array) {
 
 const handleClick = function () {
   $('.square').on('click', function (e) {
-    // turns off click on board squares immediately after submission
-    // to prevent double clicks.  Will turn click back on in ui.js after
-    // AJAX PATCH success
-    $('.square').off()
+    // turns off clicked square's click handler off immediately after submission
+    // to prevent double clicks.
+    $(this).off()
     const squareClicked = store.game.cells[+$(this).attr('id')]
     const length = store.game.cells.filter((e) => { return (e !== undefined && e !== '') }).length
 
@@ -139,6 +138,10 @@ const playAgain = function () {
   }
   $('.p1-prompt-text').html("It's your turn, " + playerArray[0] + '!')
   $('.p2-prompt-text').html('')
+
+  // because I turn off the click handler of each game cell when clicked,
+  // this is necessary to replace all of the click handlers to play again
+  logicHandler()
 }
 
 const newGame = function () {
@@ -151,6 +154,12 @@ const newGame = function () {
   }
   $('.p1-prompt-text').html("It's your turn, " + playerArray[0] + '!')
   $('.p2-prompt-text').html('')
+
+  // because I turn off the click handler of each game cell when clicked,
+  // this is necessary to replace all of the click handlers to play again.
+  // this could be necessary if user signed out or changes password, which
+  // requires clicking 'new game' to play again.
+  logicHandler()
 }
 
 module.exports = {

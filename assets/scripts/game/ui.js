@@ -52,23 +52,17 @@ const submitMoveSuccess = (ajaxResponse) => {
   // Checks for win condition on 'cells' array that AJAX returns.
   // If 'over' already equals true, skips check.
   if (gameLogic.checkWin(store.game.cells) && !store.game.over) {
+    // turns off remainder of board click handlers when winCondition met.
+    $('.square').off()
     $('#game-over').val('true')
     $('#submit-move').submit()
   }
   gameLogic.renderBoard(store.game.cells)
-
-  // invokes handleClick to turn back on click handler for the game board.
-  // we turned off the click handler within handleClick in gameLogic.js.
-  // does this create some sort of circular problem?
-  gameLogic.logicHandler()
 }
 
 const submitMoveFailure = (error) => {
   console.log('Submit Move error')
   console.error(error)
-
-  // turns handler back on as well if submit move fails to register on server.
-  gameLogic.logicHandler()
 }
 
 const findGameSuccess = (ajaxResponse) => {
