@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- To scale properly for mobil -->
+      <meta name="viewport" content="user-scalable = yes">
+      <!-- linking google fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Raleway:400,500,600,700|Noto+Sans:400,500,600" rel="stylesheet">
+
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+      <body>
+        <div class="init">
+          <button id="sign-in-modal" type="button" class="btn btn-primary btn-lg sign-in" data-toggle="modal" data-target="#mySignInModal">
+            Sign In
+          </button>
+          <div class="initText">OR</div>
+          <button id="sign-up-modal" type="button" class="btn btn-primary btn-lg sign-up" data-toggle="modal" data-target="#mySignUpModal">
+            Create an Account
+          </button>
+        </div>
+        <header>
+          <div class="title">TIC TAC TOE</div>
+          <div class="user-signed-in"></div>
+          <!-- MODAL -->
+          <div class="modal fade" id="mySignUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Sign-up</h4>
+                      </div>
+                      <div class="modal-body">
+                         <form id="sign-up">
+                           <div class="form-group">
+                            <label for="name">Email</label>
+                            <input type="text" name="credentials[email]" class="form-control" placeholder="Email">
+                            <label for="name">Password</label>
+                            <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+                            <label for="name">Password Confirmation</label>
+                            <input type="password" name="credentials[password_confirmation]" class="form-control" placeholder="Confirm Password">
+                           </div>
+                           <input type="submit" class="btn btn-default" name="submit" value="Sign up!">
+                           <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                           <h5 class="form-error" id="tempSignUpError"></h5>
+                       </form>
+                      </div>
+                </div>
+              </div>
+            </div>
+            <!-- END MODAL -->
+
+
+            <!-- MODAL -->
+            <div class="modal fade" id="mySignInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">Sign-in</h4>
+                        </div>
+                        <div class="modal-body">
+                           <form id="sign-in">
+                             <div class="form-group">
+                              <label for="name">Email</label>
+                              <input type="text" name="credentials[email]" class="form-control" placeholder="Email">
+                              <label for="name">Password</label>
+                              <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+                             </div>
+                             <input type="submit" class="btn btn-default" name="submit" value="Sign in!">
+                             <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                             <h5 class="form-error" id="tempSignInError"></h5>
+                         </form>
+                        </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END MODAL -->
+
+              <button id="chng-pw-modal" type="button" class="btn btn-primary btn-lg change-pw" data-toggle="modal" data-target="#myPwChangeModal">
+                Change Password
+              </button>
+              <!-- MODAL -->
+              <div class="modal fade" id="myPwChangeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Change Password</h4>
+                          </div>
+                          <div class="modal-body">
+                             <form id="change-password">
+                               <div class="form-group">
+                                <label for="name">Old Password</label>
+                                <input type="password" name="passwords[old]" class="form-control" placeholder="Old Password">
+                                <label for="name">New Password</label>
+                                <input type="password" name="passwords[new]" class="form-control" placeholder="New Password">
+                               </div>
+                               <input type="submit" class="btn btn-default" name="submit" value="Change Password!">
+                               <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                               <h5 class="form-error" id="tempChangePasswordError"></h5>
+                           </form>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- END MODAL -->
+                <form id="sign-out">
+                  <input type="submit" class="btn btn-primary btn-lg sign-out" name="submit" value="Sign out!">
+                </form>
+
+          <div class="scoreWrapper">
+            <div id="player0" class="p1Score"> Player One
+              <span id="score0" class="score">0</span>
+            </div>
+            <div id="player1" class="drawScore"> Draw
+              <span id="score1" class="score">0</span>
+            </div>
+            <div id="player2" class="p2Score"> Player Two
+              <span id="score2" class="score">0</span>
+            </div>
+          </div>
+        </header>
+
+        <main>
+            <div class="p1-prompt">
+              <div class="p1-prompt-inner">
+                <p class="p1-prompt-text"></p>
+              </div>
+            </div>
+            <div class="p1">
+              <div id="x0" class= "x-sideline"></div>
+              <div id="x1" class= "x-sideline"></div>
+              <div id="x2" class= "x-sideline"></div>
+              <div id="x3" class= "x-sideline"></div>
+              <div id="x4" class= "x-sideline"></div>
+            </div>
+            <div class="gameBoardWrapper">
+              <div id="0" class="square b r"></div>
+              <div id="1" class="square b r"></div>
+              <div id="2" class="square b"></div>
+              <div id="3" class="square b r"></div>
+              <div id="4" class="square b r"></div>
+              <div id="5" class="square b"></div>
+              <div id="6" class="square r"></div>
+              <div id="7" class="square r"></div>
+              <div id="8" class="square"></div>
+            </div>
+            <div class="p2-prompt">
+              <div class="p2-prompt-inner">
+                <p class="p2-prompt-text"></p>
+              </div>
+            </div>
+            <div class="p2">
+              <div id="o0" class= "o-sideline"></div>
+              <div id="o1" class= "o-sideline"></div>
+              <div id="o2" class= "o-sideline"></div>
+              <div id="o3" class= "o-sideline"></div>
+            </div>
+        </main>
+        <div class="player-stats-history">
+          <div class="game-hist-header"></div>
+            <div class="game-stats">
+              <span id="w" class="win"></span>
+              <span id="l" class="loss"></span>
+              <span id="d" class="draw"></span>
+            </div>
+          <div class="games-won">
+
+          </div>
+        </div>
+        <form id="submit-move" class="hiddenForm">
+          <input id="cell-index" name="game[cell][index]" type="text" value="">
+          <input id="cell-value" name="game[cell][value]" type="text" value="">
+          <input id=game-over name="game[over]" type="text" value="">
+          <input type="submit" name="submit" value="Submit Move!">
+        </form>
+
+        <!-- new game button should only show when gameboard is absect. button should be center of screen -->
+        <div id="new-game-wrapper">
+          <form id="new-game">
+            <input type="submit" class="btn btn-primary btn-lg new-game" name="submit" value="New Game">
+          </form>
+        </div>
+        <div id="play-again-wrapper">
+          <form id="play-again">
+            <input type="submit" class="btn btn-primary btn-lg play-again" name="submit" value="Play Again">
+          </form>
+        </div>
+        <footer>
+          <div class="finished-games-wrapper">
+            <form id="get-finished-games">
+              <input id="toggleHist" type="submit" class="btn btn-primary btn-lg get-games" name="submit" value="Player One Game History">
+            </form>
+          </div>
+
+          <!-- <form id="find-game">
+            <input type="submit" class="btn btn-primary btn-lg find-game" name="submit" value="Find Game">
+          </form>
+
+          <form id="join-game">
+            <input type="submit" class="btn btn-primary btn-lg join-game" name="submit" value="Join Game">
+          </form>
+
+          <form id="player-stats">
+            <input type="submit" class="btn btn-primary btn-lg player-stats" name="submit" value="Player Stats">
+          </form> -->
+        </footer>
+
+  </body>
+</html>
