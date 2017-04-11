@@ -4,6 +4,8 @@ const store = require('../store')
 // let boardArray = new Array(9)
 let scoreArray = [0, 0, 0]
 let playerArray = ['Player X', 'Tie', 'Player O']
+// Local array to try to corrent for timing of Ajax function
+let localArray = new Array(9)
 
 const checkWin = function (array) {
   const winArray = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [2, 4, 6], [0, 4, 8]]
@@ -102,9 +104,19 @@ const handleClick = function () {
     // to prevent double clicks.
     $(this).off()
     const squareClicked = store.game.cells[+$(this).attr('id')]
-    const length = store.game.cells.filter((e) => { return (e !== undefined && e !== '') }).length
+    // base my length check on actual gameboard, not ajax array
+    const divs = []
+    $('.square').toArray().forEach((div) =>
+    divs.push($(div).text()))
+    console.log(divs)
+    const length = divs.filter((e) => { return (e !== undefined && e !== '') }).length
+    const localLength = localArray.filter((e) => { return (e !== undefined && e !== '') }).length
+    //
 
-    if ((length % 2 === 0) && (squareClicked === undefined || squareClicked === '') && (store.game.over === false)) {
+    if ((length % 2 === 0) && (localLength % 2 === 0) && (squareClicked === undefined || squareClicked === '') && (store.game.over === false)) {
+      // fill up local gameboard array, which I use to control for AJAX timing throwing off x & o alternating
+      localArray[+$(this).attr('id')] = 'x'
+
       // click on board fills out form and submits AJAX PATCH request.  All logic handled after Ajax response.
       $('#cell-index').val(+$(this).attr('id'))
       $('#cell-value').val('x')
@@ -113,7 +125,10 @@ const handleClick = function () {
 
       $('.p2-prompt-text').html("It's your turn, " + playerArray[2] + '!')
       $('.p1-prompt-text').html('')
-    } else if ((length % 2 === 1) && (squareClicked === undefined || squareClicked === '') && (store.game.over === false)) {
+    } else if ((length % 2 === 1) && (localLength % 2 === 1) && (squareClicked === undefined || squareClicked === '') && (store.game.over === false)) {
+      // fill up local gameboard array, which I use to control for AJAX timing throwing off x & o alternating
+      localArray[+$(this).attr('id')] = 'o'
+      // click on board fills out form and submits AJAX PATCH request.  All logic handled after Ajax response.
       $('#cell-index').val(+$(this).attr('id'))
       $('#cell-value').val('o')
       $('#game-over').val('false')
@@ -131,6 +146,9 @@ const logicHandler = function () {
 }
 
 const playAgain = function () {
+  // reset local array, which I use to control for AJAX timing through off x & o alternating
+  localArray = new Array(9)
+
   $('#play-again-wrapper').hide()
   // renderBoard(store.game.cells)
   for (let i = 0; i < 9; i++) {
@@ -145,6 +163,9 @@ const playAgain = function () {
 }
 
 const newGame = function () {
+  // reset local array, which I use to control for AJAX timing through off x & o alternating
+  localArray = new Array(9)
+
   $('#play-again-wrapper').hide()
   scoreArray = [0, 0, 0]
   playerArray = ['Player X', 'Tie', 'Player O']
