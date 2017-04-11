@@ -160,6 +160,8 @@ const playAgain = function () {
 
   // because I turn off the click handler of each game cell when clicked,
   // this is necessary to replace all of the click handlers to play again
+  // turn off all remaining handlers first just to make sure there are no duplicate click handlers
+  $('.square').off()
   logicHandler()
 }
 
@@ -181,6 +183,8 @@ const newGame = function () {
   // this is necessary to replace all of the click handlers to play again.
   // this could be necessary if user signed out or changes password, which
   // requires clicking 'new game' to play again.
+   // turn off all remaining handlers first just to make sure there are no duplicate click handlers
+  $('.square').off()
   logicHandler()
 }
 
